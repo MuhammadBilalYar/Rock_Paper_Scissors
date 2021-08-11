@@ -40,7 +40,7 @@ namespace Rock_Paper_Scissors
                 {
                     int oldValue = this._winners[winner.Name];
                     this._winners[winner.Name] = oldValue + 1;
-                    //Console.WriteLine($"Congrats {winner.Name} is the winner");
+                    Console.WriteLine($"{winner.Name} is the winner.");
                     match++;
                 }
                 else

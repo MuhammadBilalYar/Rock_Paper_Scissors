@@ -10,8 +10,9 @@
 
     public static class MoveMapper
     {
-        public static Move ToMove(this string choice)
+        public static Move ToMove<T>(this T move)
         {
+            string choice = move.ToString();
             switch (choice.ToUpper())
             {
                 case "R":

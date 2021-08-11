@@ -8,7 +8,7 @@ namespace Rock_Paper_Scissors
         {
             IInputFactory factory = new InputFactory();
             new Game(factory).Start();
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Game End!");
         }
     }
 }

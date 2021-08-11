@@ -22,12 +22,13 @@ namespace Rock_Paper_Scissors
 
         public Move GetHumanMove()
         {
-            Console.WriteLine("R - Rock\n" +
-                              "P - Paper\n" +
-                              "S - Scissors\n" +
+            Console.WriteLine("1 or R - Rock\n" +
+                              "2 or P - Paper\n" +
+                              "3 or S - Scissors\n" +
                               "Make your selection: ");
             string input = Console.ReadLine();
             Move userMove = input.ToMove();
+            Console.WriteLine($"You selected {userMove.ToString()}.");
             if (userMove == Move.Default)
             {
                 Console.WriteLine("Sorry Invalid. Please choose, try again");
@@ -39,10 +40,10 @@ namespace Rock_Paper_Scissors
         public Move GetComputerMove()
         {
             Random randomChoice = new Random();
-            string input = randomChoice.Next(1, 4).ToString();
+            int input = randomChoice.Next(1, 4);
 
             Move computerMove = input.ToMove();
-            Console.WriteLine($"Computer Selected {computerMove}");
+            Console.WriteLine($"Computer selected {computerMove}");
             return computerMove;
         }
     }
