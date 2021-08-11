@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Rock_Paper_Scissors.Models;
+using System;
 
 namespace Rock_Paper_Scissors
 {
