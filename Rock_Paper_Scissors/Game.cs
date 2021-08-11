@@ -11,6 +11,7 @@ namespace Rock_Paper_Scissors
         private readonly IInputFactory _factory = null;
         private readonly Player _computer = null;
         private readonly Dictionary<string, int> _winners = null;
+        private const int MAX_MATCHES = 3;
         public Game(IInputFactory factory)
         {
             this._factory = factory;
@@ -30,7 +31,7 @@ namespace Rock_Paper_Scissors
             this._winners.Add(this._human.Name, 0);
 
             int match = 1;
-            while (match <= 3)
+            while (match <= MAX_MATCHES)
             {
                 Console.WriteLine("************************************************");
                 Console.WriteLine($"\t\tMatch {match}");
