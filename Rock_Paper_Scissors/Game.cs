@@ -20,6 +20,9 @@ namespace Rock_Paper_Scissors
             this._winners.Add(this._computer.Name, 0);
         }
 
+        /// <summary>
+        /// Game Starting point
+        /// </summary>
         public void Start()
         {
             string name = this._factory.GetName();
@@ -54,6 +57,9 @@ namespace Rock_Paper_Scissors
             AnnounceWinner();
         }
 
+        /// <summary>
+        /// Winner announcer
+        /// </summary>
         private void AnnounceWinner()
         {
             if (this._winners[this._human.Name] > this._winners[this._computer.Name])
@@ -61,14 +67,15 @@ namespace Rock_Paper_Scissors
             else
                 Console.WriteLine($"Congrats {this._computer.Name} is the winner");
         }
+
         /// <summary>
         /// ●	Rock beats scissors
         /// ●	Scissors beats paper
         /// ●	Paper beats rock
         /// </summary>
-        /// <param name="move"></param>
+        /// <param name="move">move</param>
         /// <returns></returns>
-        public static Move GetWinningMove(Move move)
+        private static Move GetWinningMove(Move move)
         {
             switch (move)
             {
@@ -82,7 +89,11 @@ namespace Rock_Paper_Scissors
             }
         }
 
-        public Player GetWinner()
+        /// <summary>
+        /// Get Winner
+        /// </summary>
+        /// <returns></returns>
+        private Player GetWinner()
         {
             if (GetWinningMove(this._human.Move).Equals(this._computer.Move))
             {

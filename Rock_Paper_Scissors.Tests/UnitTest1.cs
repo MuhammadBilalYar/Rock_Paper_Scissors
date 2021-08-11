@@ -94,5 +94,21 @@ namespace Rock_Paper_Scissors.Tests
             Assert.IsTrue(move == Move.Rock || move == Move.Paper || move == Move.Scissors);
         }
         #endregion
+
+        #region Game
+        [Test]
+        [TestCase(Move.Rock, Move.Scissors)]
+        [TestCase(Move.Scissors, Move.Paper)]
+        [TestCase(Move.Paper, Move.Rock)]
+        public void PlayGame_RockBeatsScissors(Move human, Move computer)
+        {
+            Mock<IInputFactory> factory = new Mock<IInputFactory>();
+            factory.Setup(x => x.GetName()).Returns(() => "Human");
+            factory.Setup(x => x.GetHumanMove()).Returns(() => human);
+            factory.Setup(x => x.GetComputerMove()).Returns(() => computer);
+
+            new Game(factory.Object).Start();
+        }
+        #endregion
     }
 }
